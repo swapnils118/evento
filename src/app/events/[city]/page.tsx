@@ -3,7 +3,6 @@ import H1 from "@/components/h1";
 import { Suspense } from "react";
 import Loading from "../loading";
 import { capitalize } from "@/lib/utils";
-import { Metadata } from "next";
 import { z } from "zod";
 
 type Props = {
@@ -15,12 +14,12 @@ type EventsListProps = Props & {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export function generateMetaData({ params }: Props): Metadata {
-  const city = params.city;
-  return {
-    title: city === "all" ? "All Events" : `Events is ${capitalize(city)}`,
-  };
-}
+// export function generateMetaData({ params }: Props): Metadata {
+//   const city = params.city;
+//   return {
+//     title: city === "all" ? "All Events" : `Events is ${capitalize(city)}`,
+//   };
+// }
 const pageNumberSchema = z.coerce.number().int().positive().optional();
 
 export default async function EventsPage({

@@ -1,6 +1,5 @@
 import H1 from "@/components/h1";
 import { getEvent } from "@/lib/server-utils";
-import { Metadata } from "next";
 import Image from "next/image";
 
 type Props = {
@@ -9,14 +8,14 @@ type Props = {
   };
 };
 
-export async function generateMetaData({ params }: Props): Promise<Metadata> {
-  const slug = params.slug;
-  const event = await getEvent(slug);
+// export async function generateMetaData({ params }: Props): Promise<Metadata> {
+//   const slug = params.slug;
+//   const event = await getEvent(slug);
 
-  return {
-    title: event.name,
-  };
-}
+//   return {
+//     title: event.name,
+//   };
+// }
 
 export default async function EventPage({ params }: Props) {
   const slug = params.slug;
