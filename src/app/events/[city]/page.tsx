@@ -14,12 +14,6 @@ type EventsListProps = Props & {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// export function generateMetaData({ params }: Props): Metadata {
-//   const city = params.city;
-//   return {
-//     title: city === "all" ? "All Events" : `Events is ${capitalize(city)}`,
-//   };
-// }
 const pageNumberSchema = z.coerce.number().int().positive().optional();
 
 export default async function EventsPage({
